@@ -11,6 +11,7 @@ namespace MyHomeManager
         int UserID { get; set; }
         string name { get; set; }
         double Rating { get; set; }
+
         int Points { get; set; }
         string fbID { get; set; }
         int homeID { get; set; }
