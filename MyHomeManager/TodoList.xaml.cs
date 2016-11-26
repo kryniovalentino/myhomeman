@@ -35,7 +35,7 @@ namespace MyHomeManager
 
             var secondPage = new AddItemView();
             //secondPage.BindingContext = contact;
-            await Navigation.PushAsync(secondPage);
+            //await Navigation.PushAsync(secondPage);
         }
 
         protected override async void OnAppearing()
