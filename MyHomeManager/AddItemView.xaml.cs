@@ -17,11 +17,12 @@ namespace MyHomeManager
         {
             InitializeComponent();
         }
-        async void OnNavigateButtonClicked(object sender, EventArgs e)
+        public Page OnNavigateButtonClicked(object sender, EventArgs e)
         {
 
             var secondPage = new TodoList();
             //secondPage.BindingContext = contact;
+            return new NavigationPage(new TodoList());
             //await Navigation.PushAsync(secondPage);
         }
     }

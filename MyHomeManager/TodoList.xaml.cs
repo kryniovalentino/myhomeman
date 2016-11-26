@@ -30,11 +30,12 @@ namespace MyHomeManager
             }
         }
 
-        async void OnNavigateButtonClicked(object sender, EventArgs e)
+        public Page OnNavigateButtonClicked(object sender, EventArgs e)
         {
 
             var secondPage = new AddItemView();
             //secondPage.BindingContext = contact;
+            return new NavigationPage(new AddItemView());
             //await Navigation.PushAsync(secondPage);
         }
 
