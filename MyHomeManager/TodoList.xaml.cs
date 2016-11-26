@@ -30,13 +30,18 @@ namespace MyHomeManager
             }
         }
 
-        public Page OnNavigateButtonClicked(object sender, EventArgs e)
+        async void OnNavigateButtonClicked(object sender, EventArgs e)
         {
-
-            var secondPage = new AddItemView();
-            //secondPage.BindingContext = contact;
-            return new NavigationPage(new AddItemView());
-            //await Navigation.PushAsync(secondPage);
+            try
+            {
+                var secondPage = new AddItemView();
+                //secondPage.BindingContext = contact;
+                await Navigation.PushAsync(secondPage);
+            }
+            catch (Exception)
+            {
+                
+            }
         }
 
         protected override async void OnAppearing()
