@@ -13,8 +13,8 @@ namespace MyHomeManager
             InitializeComponent();
 
             manager = TodoItemManager.DefaultManager;
-
-            // OnPlatform<T> doesn't currently support the "Windows" target platform, so we have this check here.
+            //App.IAuthenticator.Authenticate();
+            // OnPlatform<T>  asdasd doesn't currently support the "Windows" target platform, so we have this check here.
             if (manager.IsOfflineEnabled &&
                 (Device.OS == TargetPlatform.Windows || Device.OS == TargetPlatform.WinPhone))
             {
@@ -26,6 +26,7 @@ namespace MyHomeManager
                 syncButton.Clicked += OnSyncItems;
 
                 buttonsPanel.Children.Add(syncButton);
+                
             }
         }
 

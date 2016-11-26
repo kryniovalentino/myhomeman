@@ -12,9 +12,13 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
+using Newtonsoft.Json.Linq;
+using Xamarin.Auth;
+
 
 #if OFFLINE_SYNC_ENABLED
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
@@ -40,10 +44,20 @@ namespace MyHomeManager
 
         const string offlineDbPath = @"localstore.db";
 
+        async void LoginButtonClicked()
+        {
+            
+            JObject token = new JObject();
+            token["access_token"] = "358065897898939|iA4-VV-ZkkW_QOdwYuc5i1UH6Y8";
+            var user = await client.LoginAsync(MobileServiceAuthenticationProvider.Facebook, token);
+        }
+
         private TodoItemManager()
         {
-            this.client = new MobileServiceClient(Constants.ApplicationURL);
 
+           
+            this.client = new MobileServiceClient(Constants.ApplicationURL);
+            //var user = Logi
 #if OFFLINE_SYNC_ENABLED
             var store = new MobileServiceSQLiteStore(offlineDbPath);
             store.DefineTable<TodoItem>();
@@ -53,9 +67,10 @@ namespace MyHomeManager
 
             this.todoTable = client.GetSyncTable<TodoItem>();
 #else
-            this.todoTable = client.GetTable<TodoItem>();
-            this.users = client.GetTable<User>();
-            this.homes = client.GetTable<Home>();
+           this.todoTable = client.GetTable<TodoItem>();
+           this.users = client.GetTable<User>();
+           this.homes = client.GetTable<Home>();
+            //LoginButtonClicked();
 #endif
         }
 

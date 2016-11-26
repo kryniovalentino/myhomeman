@@ -1,11 +1,16 @@
 ﻿using System;
-
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace MyHomeManager
 {
 	public class App : Application
 	{
+        public static IAuthenticator IAuthenticator { get; private set; }
+	    public static void init(IAuthenticator iAuthenticator)
+	    {
+	        IAuthenticator = iAuthenticator;
+	    }
 		public App ()
 		{
 			// The root page of your application
