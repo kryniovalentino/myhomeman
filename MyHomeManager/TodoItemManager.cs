@@ -33,6 +33,9 @@ namespace MyHomeManager
 #else
         IMobileServiceTable<TodoItem> todoTable;
         IMobileServiceTable<User> users;
+        IMobileServiceTable<Home> homes;
+
+        User currentUser;
 #endif
 
         const string offlineDbPath = @"localstore.db";
@@ -52,6 +55,7 @@ namespace MyHomeManager
 #else
             this.todoTable = client.GetTable<TodoItem>();
             this.users = client.GetTable<User>();
+            this.homes = client.GetTable<Home>();
 #endif
         }
 
