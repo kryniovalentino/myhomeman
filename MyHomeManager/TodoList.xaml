@@ -49,5 +49,6 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
+    <Button x:Name="navigateButton" Text="Next Page" Clicked="OnNavigateButtonClicked" HorizontalOptions="Center"/>
   </Grid>
 </ContentPage>

@@ -68,8 +68,8 @@ namespace MyHomeManager
             this.todoTable = client.GetSyncTable<TodoItem>();
 #else
            this.todoTable = client.GetTable<TodoItem>();
-           this.users = client.GetTable<User>();
-           this.homes = client.GetTable<Home>();
+           //this.users = client.GetTable<User>();
+           //this.homes = client.GetTable<Home>();
             //LoginButtonClicked();
 #endif
         }

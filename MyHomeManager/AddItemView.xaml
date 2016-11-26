@@ -3,4 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyHomeManager.AddItemView">
   <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+  <Entry Placeholder="Username" />
+
+  <Button x:Name="navigateButton" Text="Next Page" Clicked="OnNavigateButtonClicked" HorizontalOptions="Center"/>
+
+
 </ContentPage>
