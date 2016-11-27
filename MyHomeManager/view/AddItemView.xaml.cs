@@ -18,8 +18,6 @@ namespace MyHomeManager
             InitializeComponent();
         }
         public void OnNavigateButtonClicked(object sender, EventArgs e)
-        {
-            var secondPage = new TodoList();
             Navigation.PopModalAsync();
         }
     }
