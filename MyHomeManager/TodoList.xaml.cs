@@ -13,7 +13,7 @@ namespace MyHomeManager
             InitializeComponent();
 
             manager = TodoItemManager.DefaultManager;
-            //App.IAuthenticator.Authenticate();
+
             // OnPlatform<T>  asdasd doesn't currently support the "Windows" target platform, so we have this check here.
             if (manager.IsOfflineEnabled &&
                 (Device.OS == TargetPlatform.Windows || Device.OS == TargetPlatform.WinPhone))
@@ -24,19 +24,15 @@ namespace MyHomeManager
                     HeightRequest = 30
                 };
                 syncButton.Clicked += OnSyncItems;
-
                 buttonsPanel.Children.Add(syncButton);
-                
             }
         }
 
-        public Page OnNavigateButtonClicked(object sender, EventArgs e)
+        public void OnNavigateButtonClicked(object sender, EventArgs e)
         {
 
             var secondPage = new AddItemView();
-            //secondPage.BindingContext = contact;
-            return new NavigationPage(new AddItemView());
-            //await Navigation.PushAsync(secondPage);
+            Navigation.PushModalAsync(secondPage);
         }
 
         protected override async void OnAppearing()
